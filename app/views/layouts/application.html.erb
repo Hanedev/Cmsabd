@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cmsabd</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  
+  <%
+    if request.path.include? "dashboard" 
+  %>
+  <body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+     <!-- Preloader -->
+      <!--div class="preloader flex-column justify-content-center align-items-center">
+        <%= image_tag "img/AdminLTELogo.png" , class: "animation__shake",  height:"60", width:"60" %>
+      </div-->
+
+  <% else %>
+  
+  <body>
+  
+  <div class="wrapper">
+  
+  <% end %>
+
+
+   
+
+    <%= yield %>
+  </div>
+  
+
+  </body>
+  <%= javascript_include_tag "application" , "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "jquery/jquery.min", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "jquery-ui/jquery-ui.min", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "bootstrap/js/bootstrap.bundle.min", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "chart.js/Chart.min", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "sparklines/sparkline", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "jqvmap/jquery.vmap.min", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "jqvmap/maps/jquery.vmap.usa", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "jquery-knob/jquery.knob.min", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "moment/moment.min", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "daterangepicker/daterangepicker", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "summernote/summernote-bs4.min", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "adminlte.min", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "demo", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag "dashboard", "data-turbo-track": "reload", defer: true %>
+
+</html>
